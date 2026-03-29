@@ -28,7 +28,7 @@ export default function Navbar() {
       {/* Logo */}
       <a href="#" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <img
-           src="/logo.png"
+           src="/logo.svg"
             alt="YmasTech"
              style={{ height: "64px", width: "auto" }}
           />

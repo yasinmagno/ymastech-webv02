@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: "10px", textDecoration: "none", marginBottom: "16px" }}>
-            <img src="/logo.png" alt="YmasTech" style={{ height: "40px", width: "auto" }} />
+            <img src="/logo.svg" alt="YmasTech" style={{ height: "40px", width: "auto" }} />
           </a>
           <p style={{ fontSize: "13px", fontWeight: 300, color: "#888", lineHeight: 1.7, marginBottom: "24px", maxWidth: "260px" }}>
             {t.tagline}
@@ -95,8 +95,8 @@ export default function Footer() {
           </h4>
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "10px" }}>
             {[
-              { label: "hello@ymastech.co.mz", href: "mailto:hello@ymastech.co.mz" },
-              { label: "+258 84 000 0000", href: "https://wa.me/258857158718" },
+              { label: "ymastechmz@gmail.com", href: "mailto:ymastechmz@gmail.com" },
+              { label: "+258 85 715 8718", href: "https://wa.me/258857158718" },
               { label: "Maputo, Moçambique 🇲🇿", href: "#" },
             ].map((item, i) => (
               <li key={i}>

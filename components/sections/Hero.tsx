@@ -141,7 +141,7 @@ export default function Hero() {
             }}>
               {t.cta1}
             </a>
-            <a href="#portfolio" style={{
+            <a href="#services" style={{
               padding: "15px 40px", background: "transparent", color: "#fff",
               fontSize: "13px", fontWeight: 700, letterSpacing: "0.14em",
               textTransform: "uppercase", borderRadius: "2px", textDecoration: "none",

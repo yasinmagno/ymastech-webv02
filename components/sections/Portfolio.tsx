@@ -32,12 +32,22 @@ export default function Portfolio() {
             {t.title}
           </h2>
         </div>
-        <a href="#contact" style={{
-          padding: "13px 34px", background: "transparent", color: "#fff",
-          fontSize: "12px", fontWeight: 700, letterSpacing: "0.14em",
-          textTransform: "uppercase", borderRadius: "2px", textDecoration: "none",
-          border: "1px solid rgba(255,255,255,0.2)",
-        }}>
+        <a href="#contact"
+          style={{
+            padding: "14px 36px", background: "#E63946", color: "#fff",
+            fontSize: "12px", fontWeight: 700, letterSpacing: "0.14em",
+            textTransform: "uppercase", borderRadius: "2px", textDecoration: "none",
+            border: "2px solid #E63946", transition: "background 0.2s, color 0.2s",
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+            (e.currentTarget as HTMLAnchorElement).style.color = "#E63946";
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLAnchorElement).style.background = "#E63946";
+            (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
+          }}
+        >
           {t.viewAll}
         </a>
       </div>

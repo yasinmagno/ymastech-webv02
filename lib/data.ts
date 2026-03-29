@@ -103,8 +103,8 @@ export const content = {
     viewAll: "See All Projects",
     items: [
         { tag: "Management System", name: "Management & Billing", tech: "", image: "/images/projecto1.png" },
-        { tag: "Desktop System",    name: "Community Library",      tech: "", image: "/images/projecto3.png" },
-        { tag: "Web Platform",      name: "Online Store",           tech: "", image: "/images/projecto2.png" },
+        { tag: "Desktop System",    name: "Community Library",      tech: "", image: "/images/projecto2.png" },
+        { tag: "Web Platform",      name: "Online Store",           tech: "", image: "/images/projecto3.png" },
       ],
   },
 },
@@ -133,18 +133,18 @@ export const content = {
       tag: "Investimento", title: "Planos para cada fase\ndo seu negócio",
       sub: "Preços pensados para empresas moçambicanas. Sem taxas escondidas.",
       plans: [
-        { tier:"Starter",    price:"Negociável",   unit:"por projecto", desc:"Para pequenos negócios que querem presença digital.", hot:false, features:["Site institucional (até 5 páginas)","Design responsivo","Formulário de contacto","3 meses de suporte","Entrega em 2-3 semanas"], cta:"Pedir Orçamento" },
-        { tier:"Business",   price:"Personalizado", unit:"sob medida",   desc:"Para empresas que precisam de sistemas completos.", hot:true, badge:"MAIS POPULAR", features:["Sistema Web ou Desktop completo","Base de dados incluída","Autenticação e segurança","Dashboard de gestão","6 meses de suporte","Formação da equipa"], cta:"Começar Agora" },
-        { tier:"Enterprise", price:"À Medida",      unit:"solução completa", desc:"Para empresas com necessidades complexas.", hot:false, features:["Web + Mobile + Desktop","Arquitectura escalável","Integrações de terceiros","Relatórios e analytics","Suporte prioritário 1 ano","SLA garantido"], cta:"Pedir Orçamento" },
+        { tier:"Starter",    price:"Essencial",    unit:"por projecto", desc:"Para pequenos negócios que querem presença digital.", hot:false, features:["Site institucional (até 5 páginas)","Design responsivo","Formulário de contacto","3 meses de suporte","Entrega em 2-3 semanas"], cta:"Pedir Orçamento" },
+        { tier:"Business",   price:"Profissional", unit:"sob medida",   desc:"Para empresas que precisam de sistemas completos.", hot:true, badge:"MAIS POPULAR", features:["Sistema Web ou Desktop completo","Base de dados incluída","Autenticação e segurança","Dashboard de gestão","6 meses de suporte","Formação da equipa"], cta:"Começar Agora" },
+        { tier:"Enterprise", price:"Premium",      unit:"solução completa", desc:"Para empresas com necessidades complexas.", hot:false, features:["Web + Mobile + Desktop","Arquitectura escalável","Integrações de terceiros","Relatórios e analytics","Suporte prioritário 1 ano","SLA garantido"], cta:"Pedir Orçamento" },
       ],
     },
     en: {
       tag: "Investment", title: "Plans for every stage\nof your business",
       sub: "Prices designed for Mozambican businesses. No hidden fees.",
       plans: [
-        { tier:"Starter",    price:"Negotiable", unit:"per project",      desc:"For small businesses wanting digital presence.", hot:false, features:["Corporate website (up to 5 pages)","Responsive design","Contact form","3 months support","Delivery in 2-3 weeks"], cta:"Request Quote" },
-        { tier:"Business",   price:"Custom",     unit:"tailor-made",      desc:"For companies needing complete and robust systems.", hot:true, badge:"MOST POPULAR", features:["Full Web or Desktop system","Database included","Authentication and security","Management dashboard","6 months support","Team training"], cta:"Start Now" },
-        { tier:"Enterprise", price:"Custom",     unit:"complete solution", desc:"For companies with complex needs.", hot:false, features:["Web + Mobile + Desktop","Scalable architecture","Third-party integrations","Reports and analytics","Priority support 1 year","Guaranteed SLA"], cta:"Request Quote" },
+        { tier:"Starter",    price:"Essential",    unit:"per project",      desc:"For small businesses wanting digital presence.", hot:false, features:["Corporate website (up to 5 pages)","Responsive design","Contact form","3 months support","Delivery in 2-3 weeks"], cta:"Request Quote" },
+        { tier:"Business",   price:"Professional", unit:"tailor-made",      desc:"For companies needing complete and robust systems.", hot:true, badge:"MOST POPULAR", features:["Full Web or Desktop system","Database included","Authentication and security","Management dashboard","6 months support","Team training"], cta:"Start Now" },
+        { tier:"Enterprise", price:"Premium",      unit:"complete solution", desc:"For companies with complex needs.", hot:false, features:["Web + Mobile + Desktop","Scalable architecture","Third-party integrations","Reports and analytics","Priority support 1 year","Guaranteed SLA"], cta:"Request Quote" },
       ],
     },
   },
@@ -157,7 +157,7 @@ export const content = {
         { label:"WhatsApp",    value:"+258 85 715 8718",      icon:"phone" },
         { label:"Localização", value:"Maputo, Moçambique",    icon:"location" },
       ],
-      form: { name:"Nome", email:"Email", company:"Empresa", projectType:"Tipo de Projeto", message:"Mensagem", submit:"Enviar Mensagem →", sending:"A enviar...", success:"Mensagem enviada! Respondemos em 24h.", error:"Erro ao enviar. Tenta novamente.", types: ["Selecionar...","Website / App Web","App Mobile","Sistema Desktop","Plataforma SaaS","Outro"], },
+      form: { name:"Nome", email:"Email", company:"Empresa", projectType:"Tipo de Projeto", message:"Mensagem", submit:"Enviar no WhatsApp →", types: ["Selecionar...","Website / App Web","App Mobile","Sistema Desktop","Plataforma SaaS","Outro"], },
     },
     en: {
       tag: "Let's Work Together", title: "Get in Touch",
@@ -167,7 +167,7 @@ export const content = {
         { label:"WhatsApp", value:"+258 85 715 8718",      icon:"phone" },
         { label:"Location", value:"Maputo, Mozambique",    icon:"location" },
       ],
-      form: { name:"Name", email:"Email", company:"Company", projectType:"Project Type", message:"Message", submit:"Send Message →", sending:"Sending...", success:"Message sent! We'll reply within 24h.", error:"Error sending. Please try again.", types: ["Select...","Website / Web App","Mobile App","Desktop System","SaaS Platform","Other"], },
+      form: { name:"Name", email:"Email", company:"Company", projectType:"Project Type", message:"Message", submit:"Send via WhatsApp →", types: ["Select...","Website / Web App","Mobile App","Desktop System","SaaS Platform","Other"], },
     },
   },
   cta: {

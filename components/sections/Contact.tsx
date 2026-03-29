@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useLang } from "../../lib/context";
 import { content } from "../../lib/data";
 
-type Status = "idle" | "loading" | "success" | "error";
+
+const WHATSAPP_NUMBER = "258857158718";
 
 export default function Contact() {
   const { lang } = useLang();
@@ -13,30 +14,26 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", projectType: "", message: "",
   });
-  const [status, setStatus] = useState<Status>("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", company: "", projectType: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    const lines = [
+      `👋 *Novo contacto via website YMASTECH*`,
+      ``,
+      `*Nome:* ${formData.name}`,
+      `*Email:* ${formData.email}`,
+      ...(formData.company ? [`*Empresa:* ${formData.company}`] : []),
+      ...(formData.projectType ? [`*Tipo de Projecto:* ${formData.projectType}`] : []),
+      ``,
+      `*Mensagem:*`,
+      formData.message,
+    ];
+    const text = encodeURIComponent(lines.join("\n"));
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
 
   const inputStyle = {
@@ -144,28 +141,28 @@ export default function Contact() {
         {/* Nome + Email */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label style={labelStyle}>{f.name}</label>
-            <input name="name" type="text" value={formData.name} onChange={handleChange}
-              placeholder="João Silva" required style={inputStyle} />
+            <label htmlFor="name" style={labelStyle}>{f.name}</label>
+            <input id="name" name="name" type="text" value={formData.name} onChange={handleChange}
+              placeholder="João Silva" required autoComplete="name" style={inputStyle} />
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label style={labelStyle}>{f.email}</label>
-            <input name="email" type="email" value={formData.email} onChange={handleChange}
-              placeholder="joao@empresa.co.mz" required style={inputStyle} />
+            <label htmlFor="email" style={labelStyle}>{f.email}</label>
+            <input id="email" name="email" type="email" value={formData.email} onChange={handleChange}
+              placeholder="joao@empresa.co.mz" required autoComplete="email" style={inputStyle} />
           </div>
         </div>
 
         {/* Empresa */}
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <label style={labelStyle}>{f.company}</label>
-          <input name="company" type="text" value={formData.company} onChange={handleChange}
-            placeholder="Nome da empresa" style={inputStyle} />
+          <label htmlFor="company" style={labelStyle}>{f.company}</label>
+          <input id="company" name="company" type="text" value={formData.company} onChange={handleChange}
+            placeholder="Nome da empresa" autoComplete="organization" style={inputStyle} />
         </div>
 
         {/* Tipo de projecto */}
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <label style={labelStyle}>{f.projectType}</label>
-          <select name="projectType" value={formData.projectType} onChange={handleChange}
+          <label htmlFor="projectType" style={labelStyle}>{f.projectType}</label>
+          <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange}
             style={{ ...inputStyle, appearance: "none" as const }}>
             {f.types.map((type, i) => (
               <option key={i} value={i === 0 ? "" : type} style={{ background: "#181819" }}>
@@ -177,14 +174,14 @@ export default function Contact() {
 
         {/* Mensagem */}
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <label style={labelStyle}>{f.message}</label>
-          <textarea name="message" value={formData.message} onChange={handleChange}
+          <label htmlFor="message" style={labelStyle}>{f.message}</label>
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange}
             placeholder="Descreve o teu projeto..." required rows={5}
             style={{ ...inputStyle, resize: "vertical", minHeight: "120px" }} />
         </div>
 
         {/* Botão */}
-        <button type="submit" disabled={status === "loading"}
+        <button type="submit"
           style={{
             width: "100%", padding: "18px",
             background: "#E63946", color: "#fff",
@@ -193,34 +190,9 @@ export default function Contact() {
             letterSpacing: "0.2em", textTransform: "uppercase",
             border: "none", cursor: "pointer",
             transition: "background 0.2s",
-            opacity: status === "loading" ? 0.7 : 1,
           }}>
-          {status === "loading" ? f.sending : f.submit}
+          {f.submit}
         </button>
-
-        {/* Sucesso */}
-        {status === "success" && (
-          <div style={{
-            background: "rgba(39,174,96,0.1)",
-            border: "1px solid rgba(39,174,96,0.3)",
-            color: "#27ae60", fontSize: "13px",
-            padding: "14px 16px", borderRadius: "2px",
-          }}>
-            ✓ {f.success}
-          </div>
-        )}
-
-        {/* Erro */}
-        {status === "error" && (
-          <div style={{
-            background: "rgba(230,57,70,0.1)",
-            border: "1px solid rgba(230,57,70,0.3)",
-            color: "#E63946", fontSize: "13px",
-            padding: "14px 16px", borderRadius: "2px",
-          }}>
-            ✗ {f.error}
-          </div>
-        )}
       </form>
     </section>
   );

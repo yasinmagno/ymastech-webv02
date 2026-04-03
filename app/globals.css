@@ -73,14 +73,9 @@ body {
     border-right: 1px solid rgba(255,255,255,0.07) !important;
   }
 
-  /* Services: 3 col → 2 col */
+  /* Services: 3 col → 1 col */
   .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* Pricing: → 2 col */
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
   }
 
   /* Portfolio: 3 col → 1 col */
@@ -134,9 +129,9 @@ body {
   .footer-grid {
     grid-template-columns: 1fr !important;
   }
-  /* Process: manter 2 col em ecrãs pequenos */
+  /* Process: 2 col → 1 col */
   .process-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
   }
   /* Hero buttons: stack */
   .hero-buttons {

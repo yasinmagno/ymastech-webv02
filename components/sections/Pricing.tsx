@@ -48,7 +48,7 @@ export default function Pricing() {
       </div>
 
       {/* Plans grid */}
-     <div className="pricing-grid" style={{
+     <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
         gap: "1px",

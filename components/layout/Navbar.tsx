@@ -37,7 +37,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-          <img src="/logo.svg" alt="YmasTech" style={{ height: "62px", width: "auto" }} />
+          <img src="/logo.svg" alt="YmasTech" style={{ height: "60px", width: "auto" }} />
         </a>
 
         {/* Links desktop — escondidos no mobile */}

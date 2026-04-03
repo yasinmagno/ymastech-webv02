@@ -17,24 +17,21 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", company: "", projectType: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    const { name, company, projectType, message } = formData;
+    const lines = [
+      `*Novo contacto - YmasTech*`,
+      `Nome: ${name}`,
+      company ? `Empresa: ${company}` : "",
+      projectType ? `Projecto: ${projectType}` : "",
+      `Mensagem: ${message}`,
+    ].filter(Boolean).join("\n");
+    const whatsappNumber = "258857158718";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines)}`;
+    window.open(url, "_blank");
+    setStatus("success");
+    setFormData({ name: "", email: "", company: "", projectType: "", message: "" });
   };
 
   const inputStyle = {

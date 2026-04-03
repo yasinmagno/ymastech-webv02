@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: "10px", textDecoration: "none", marginBottom: "16px" }}>
-            <img src="/logo.svg" alt="YmasTech" style={{ height: "40px", width: "auto" }} />
+            <img src="/logo.svg" alt="YmasTech" style={{ height: "54px", width: "auto" }} />
           </a>
           <p style={{ fontSize: "13px", fontWeight: 300, color: "#888", lineHeight: 1.7, marginBottom: "24px", maxWidth: "260px" }}>
             {t.tagline}

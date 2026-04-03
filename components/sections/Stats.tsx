@@ -49,7 +49,7 @@ export default function Stats() {
       padding: "40px 6%",
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
-    }}>
+    }} className="stats-grid">
       {stats.map((stat, i) => (
         <div key={i} style={{
           textAlign: "center", padding: "0 20px",

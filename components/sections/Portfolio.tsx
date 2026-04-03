@@ -7,7 +7,7 @@ export default function Portfolio() {
   const t = content.portfolio[lang];
 
   return (
-    <section id="portfolio" style={{ background: "#0c0c0d", padding: "110px 6%" }}>
+    <section id="portfolio" style={{ background: "#0c0c0d", padding: "110px 6%" }} className="section-mobile">
 
       {/* Header */}
       <div style={{
@@ -57,7 +57,7 @@ export default function Portfolio() {
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",
         gap: "16px",
-      }}>
+      }} className="portfolio-grid">
         {t.items.map((proj, i) => (
           <div key={i}
             style={{

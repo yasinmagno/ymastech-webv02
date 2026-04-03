@@ -22,7 +22,31 @@ const barlowCondensed = Barlow_Condensed({
 
 export const metadata: Metadata = {
   title: "YmasTech — Built to Perform.",
-  description: "Empresa moçambicana de desenvolvimento de software.",
+  description: "Empresa moçambicana de desenvolvimento de software. Criamos sistemas Web, Mobile e Desktop para negócios que querem crescer.",
+  keywords: ["desenvolvimento de software", "moçambique", "web", "mobile", "desktop", "SaaS", "Maputo"],
+  authors: [{ name: "YmasTech" }],
+  openGraph: {
+    type: "website",
+    locale: "pt_MZ",
+    url: "https://ymastech.co.mz",
+    siteName: "YmasTech",
+    title: "YmasTech — Built to Perform.",
+    description: "Tecnologia inteligente para negócios que crescem sem limites. Desenvolvimento Web, Mobile e Desktop em Moçambique.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "YmasTech — Built to Perform.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YmasTech — Built to Perform.",
+    description: "Tecnologia inteligente para negócios que crescem sem limites.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

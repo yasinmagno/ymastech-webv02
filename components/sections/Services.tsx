@@ -46,7 +46,7 @@ export default function Services() {
   const t = content.services[lang];
 
   return (
-    <section id="services" style={{ background: "#0c0c0d", padding: "110px 6%" }}>
+    <section id="services" style={{ background: "#0c0c0d", padding: "110px 6%" }} className="section-mobile">
 
       {/* Header */}
       <div style={{
@@ -89,7 +89,7 @@ export default function Services() {
         gap: "1px",
         background: "rgba(255,255,255,0.07)",
         border: "1px solid rgba(255,255,255,0.07)",
-      }}>
+      }} className="services-grid">
         {t.items.map((svc, i) => (
           <div
             key={i}

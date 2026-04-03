@@ -7,7 +7,7 @@ export default function About() {
   const t = content.about[lang];
 
   return (
-    <section id="about" style={{
+    <section id="about" className="about-section" style={{
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
       background: "#111112",
@@ -16,7 +16,7 @@ export default function About() {
     }}>
 
      {/* Visual esquerdo — Citação */}
-<div style={{
+<div className="about-visual" style={{
   position: "relative",
   minHeight: "520px",
   display: "flex",

@@ -12,7 +12,7 @@ export default function Footer() {
       borderTop: "1px solid rgba(255,255,255,0.07)",
       padding: "60px 6% 32px",
     }}>
-      <div style={{
+      <div className="footer-grid" style={{
         display: "grid",
         gridTemplateColumns: "2fr 1fr 1fr 1fr",
         gap: "60px",

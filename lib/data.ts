@@ -157,7 +157,7 @@ export const content = {
         { label:"WhatsApp",    value:"+258 85 715 8718",      icon:"phone" },
         { label:"Localização", value:"Maputo, Moçambique",    icon:"location" },
       ],
-      form: { name:"Nome", email:"Email", company:"Empresa", projectType:"Tipo de Projeto", message:"Mensagem", submit:"Enviar no WhatsApp →", types: ["Selecionar...","Website / App Web","App Mobile","Sistema Desktop","Plataforma SaaS","Outro"], },
+      form: { name:"Nome", email:"Email", company:"Empresa", projectType:"Tipo de Projeto", message:"Mensagem", submit:"Enviar Mensagem →", types: ["Selecionar...","Website / App Web","App Mobile","Sistema Desktop","Plataforma SaaS","Outro"], },
     },
     en: {
       tag: "Let's Work Together", title: "Get in Touch",
@@ -167,7 +167,7 @@ export const content = {
         { label:"WhatsApp", value:"+258 85 715 8718",      icon:"phone" },
         { label:"Location", value:"Maputo, Mozambique",    icon:"location" },
       ],
-      form: { name:"Name", email:"Email", company:"Company", projectType:"Project Type", message:"Message", submit:"Send via WhatsApp →", types: ["Select...","Website / Web App","Mobile App","Desktop System","SaaS Platform","Other"], },
+      form: { name:"Name", email:"Email", company:"Company", projectType:"Project Type", message:"Message", submit:"Send Message →", types: ["Select...","Website / Web App","Mobile App","Desktop System","SaaS Platform","Other"], },
     },
   },
   cta: {

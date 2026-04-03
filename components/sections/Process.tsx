@@ -7,7 +7,7 @@ export default function Process() {
   const t = content.process[lang];
 
   return (
-    <section id="process" style={{
+    <section id="process" className="section-mobile" style={{
       background: "#111112",
       padding: "110px 6%",
       borderTop: "1px solid rgba(255,255,255,0.07)",
@@ -41,7 +41,7 @@ export default function Process() {
         gap: "1px",
         background: "rgba(255,255,255,0.07)",
         border: "1px solid rgba(255,255,255,0.07)",
-      }}>
+      }} className="process-grid">
         {t.steps.map((step, i) => (
           <div key={i}
             style={{

@@ -57,3 +57,91 @@ body {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.4; transform: scale(1.5); }
 }
+
+/* ── Mobile Responsiveness ── */
+@media (max-width: 768px) {
+  /* Stats: 4 col → 2x2 */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 24px 12px !important;
+  }
+  .stats-grid > div:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.07) !important;
+  }
+
+  /* Services: 3 col → 1 col */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Portfolio: 3 col → 1 col */
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About: 2 col → 1 col */
+  .about-section {
+    grid-template-columns: 1fr !important;
+  }
+  .about-visual {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+    min-height: 260px !important;
+    padding: 40px 6% !important;
+  }
+
+  /* Process: 4 col → 2x2 */
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Contact: 2 col → 1 col */
+  .contact-section {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 64px 5% !important;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer: 4 col → 2 col */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Sections: reduzir padding vertical */
+  .section-mobile {
+    padding: 64px 5% !important;
+  }
+  .section-mobile-sm {
+    padding: 40px 5% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Footer: 2 col → 1 col */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Process: 2 col → 1 col */
+  .process-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Hero buttons: stack */
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-buttons a {
+    width: 100% !important;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}

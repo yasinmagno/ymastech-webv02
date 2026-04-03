@@ -133,7 +133,7 @@ export default function Hero() {
           </p>
 
           {/* Botões */}
-          <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="hero-buttons" style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
             <a href="#contact" style={{
               padding: "16px 40px", background: "#E63946", color: "#fff",
               fontSize: "13px", fontWeight: 700, letterSpacing: "0.14em",

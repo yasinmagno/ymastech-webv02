@@ -3,9 +3,6 @@ import { useState } from "react";
 import { useLang } from "../../lib/context";
 import { content } from "../../lib/data";
 
-
-const WHATSAPP_NUMBER = "258857158718";
-
 export default function Contact() {
   const { lang } = useLang();
   const t = content.contact[lang];
@@ -14,26 +11,30 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", projectType: "", message: "",
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const lines = [
-      `👋 *Novo contacto via website YMASTECH*`,
-      ``,
-      `*Nome:* ${formData.name}`,
-      `*Email:* ${formData.email}`,
-      ...(formData.company ? [`*Empresa:* ${formData.company}`] : []),
-      ...(formData.projectType ? [`*Tipo de Projecto:* ${formData.projectType}`] : []),
-      ``,
-      `*Mensagem:*`,
-      formData.message,
-    ];
-    const text = encodeURIComponent(lines.join("\n"));
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", projectType: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputStyle = {
@@ -75,7 +76,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" style={{
+    <section id="contact" className="contact-section" style={{
       background: "#111112",
       padding: "110px 6%",
       borderTop: "1px solid rgba(255,255,255,0.07)",
@@ -138,8 +139,34 @@ export default function Contact() {
       {/* Formulário */}
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
 
+        {/* Mensagem de sucesso */}
+        {status === "success" && (
+          <div style={{
+            padding: "16px", background: "rgba(34,197,94,0.1)",
+            border: "1px solid rgba(34,197,94,0.3)",
+            color: "#4ade80", fontSize: "14px", borderRadius: "2px",
+          }}>
+            {lang === "pt"
+              ? "✓ Mensagem enviada! Respondemos em menos de 24h."
+              : "✓ Message sent! We reply within 24 hours."}
+          </div>
+        )}
+
+        {/* Mensagem de erro */}
+        {status === "error" && (
+          <div style={{
+            padding: "16px", background: "rgba(230,57,70,0.1)",
+            border: "1px solid rgba(230,57,70,0.3)",
+            color: "#f87", fontSize: "14px", borderRadius: "2px",
+          }}>
+            {lang === "pt"
+              ? "Erro ao enviar. Tenta novamente ou contacta-nos pelo WhatsApp."
+              : "Send error. Try again or contact us via WhatsApp."}
+          </div>
+        )}
+
         {/* Nome + Email */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }} className="contact-form-row">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label htmlFor="name" style={labelStyle}>{f.name}</label>
             <input id="name" name="name" type="text" value={formData.name} onChange={handleChange}
@@ -181,17 +208,21 @@ export default function Contact() {
         </div>
 
         {/* Botão */}
-        <button type="submit"
+        <button type="submit" disabled={status === "loading"}
           style={{
             width: "100%", padding: "18px",
-            background: "#E63946", color: "#fff",
+            background: status === "loading" ? "#c02030" : "#E63946",
+            color: "#fff",
             fontFamily: "var(--font-barlow-condensed)",
             fontSize: "16px", fontWeight: 800,
             letterSpacing: "0.2em", textTransform: "uppercase",
-            border: "none", cursor: "pointer",
+            border: "none", cursor: status === "loading" ? "not-allowed" : "pointer",
             transition: "background 0.2s",
+            opacity: status === "loading" ? 0.7 : 1,
           }}>
-          {f.submit}
+          {status === "loading"
+            ? (lang === "pt" ? "A enviar..." : "Sending...")
+            : f.submit}
         </button>
       </form>
     </section>

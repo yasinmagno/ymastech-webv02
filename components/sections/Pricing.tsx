@@ -7,7 +7,7 @@ export default function Pricing() {
   const t = content.pricing[lang];
 
   return (
-    <section id="pricing" style={{
+    <section id="pricing" className="section-mobile" style={{
       background: "#0c0c0d",
       padding: "110px 6%",
       borderTop: "1px solid rgba(255,255,255,0.07)",

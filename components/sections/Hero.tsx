@@ -116,17 +116,18 @@ export default function Hero() {
           }}>
             {t.line1}
             <br />
-            <em style={{ fontStyle: "italic", fontWeight: 300, color: "#E63946" }}>
-              {t.line2}
+            <em style={{ fontStyle: "italic", fontWeight: 300, color: "white" }}>
+              {t.line2.split(" ").slice(0, -1).join(" ")}{" "}
+              <span style={{ color: "#E63946" }}>{t.line2.split(" ").slice(-1)[0]}</span>
             </em>
             <br />
-            {t.line3}
+            <span style={{ color: "#E63946" }}>{t.line3}</span>
           </h1>
 
           {/* Subtítulo */}
           <p style={{
             fontSize: "17px", fontWeight: 300, lineHeight: 1.75,
-            color: "rgba(255,255,255,0.5)",
+            color: "rgba(255,255,255,0.72)",
             maxWidth: "560px", margin: "0 auto 48px",
           }}>
             {t.sub}
@@ -145,7 +146,7 @@ export default function Hero() {
               padding: "15px 40px", background: "transparent", color: "#fff",
               fontSize: "13px", fontWeight: 700, letterSpacing: "0.14em",
               textTransform: "uppercase", borderRadius: "2px", textDecoration: "none",
-              border: "1px solid rgba(255,255,255,0.2)",
+              border: "1px solid rgba(255,255,255,0.45)",
             }}>
               {t.cta2}
             </a>

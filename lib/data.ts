@@ -91,8 +91,8 @@ export const content = {
     title: "Portfólio",
     viewAll: "Ver Todos os Projetos",
    items: [
-       { tag: "Sistema de Gestão", name: "Gestão e Facturação",     tech: "", image: "/images/projecto1.png" },
-      { tag: "Sistema Desktop",   name: "Biblioteca Comunitária",  tech: "", image: "/images/projecto2.png" },
+       { tag: "Sistema de Gestão Ferragem", name: "Gestão e Facturação",     tech: "", image: "/images/projecto1.png" },
+      { tag: "Sistema de Gestão BottleStore",   name: "Gestão de Stocks",  tech: "", image: "/images/projecto2.png" },
       { tag: "Plataforma Web",    name: "Loja Online",             tech: "", image: "/images/projecto3.png" },
 
     ],
@@ -102,8 +102,8 @@ export const content = {
     title: "Portfolio",
     viewAll: "See All Projects",
     items: [
-        { tag: "Management System", name: "Management & Billing", tech: "", image: "/images/projecto1.png" },
-        { tag: "Desktop System",    name: "Community Library",      tech: "", image: "/images/projecto2.png" },
+        { tag: "Management System Ferragem", name: "Management & Billing", tech: "", image: "/images/projecto1.png" },
+        { tag: "Management System BottleStore", name: "Stock Management",      tech: "", image: "/images/projecto2.png" },
         { tag: "Web Platform",      name: "Online Store",           tech: "", image: "/images/projecto3.png" },
       ],
   },
